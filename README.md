@@ -4,7 +4,6 @@ A simple React Native app to read contacts from your phone and upload them to a 
 
 ---
 ## Setup & Run
-## 📲 Usage (How to Run on Mobile with Expo Go)
 
 Follow the steps below to test the app on your physical device:
 
@@ -15,7 +14,8 @@ Follow the steps below to test the app on your physical device:
 Make sure your server is running:
 
 ```bash
-cd backend
+cd contacts-backend
+npm install
 node server.js
 ```
 
@@ -23,14 +23,22 @@ This will start the server on:
 ```
 http://localhost:5000
 ```
-or your local IP address (e.g., `http://192.168.0.103:5000`)
+or your local IP address (e.g., `http://192.168.0.109:5000`)
 
 ---
 
+
+1. Navigate to mobile folder:
+   cd mobile
+2. Install dependencies:
+
+3. Start the server:
+  node server.js
+[Server runs on http://localhost:5000]
 ### 2️⃣ Start the React Native App (Expo)
 
 ```bash
-cd mobile
+cd ContactsUploaderApp
 npm install
 npm start
 ```
@@ -64,76 +72,8 @@ Once the app opens on your phone:
 In `mobile/App.js`, update the server IP like this:
 
 ```js
-axios.post('http://192.168.0.103:5000/api/upload-contacts', simplifiedContacts);
+axios.post('http://192.168.0.109:5000/api/upload-contacts', simplifiedContacts);
 ```
 
 Replace `192.168.0.103` with your actual local IP address (shown in Expo terminal).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Backend
-
-1. Navigate to mobile folder:
-   cd mobile
-2. Install dependencies:
-  npm install
-3. Start the server:
-  node server.js
-[Server runs on http://localhost:5000]
-
-### Mobile App
-
-1. Navigate to backend folder:
-   cd backend
-2. Install dependencies:
-  npm install
-3. Start the server:
-  npm start
-4. Scan the QR code with Expo Go app on your phone.
-
-### Usage
-Press Upload Contacts button in the app to upload contacts to the backend.
-
-Contacts will be saved in contacts.json file on the server.
